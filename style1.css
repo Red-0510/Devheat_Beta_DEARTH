@@ -1,0 +1,25 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-color: darkgoldenrod
+}
+.header{
+    background-color:black;
+    color: white;
+    display: flex;
+    justify-content: center;
+}
+li{
+    display: inline;
+}
+.container{
+    height: 75vh;
+    display: flex;
+    justify-content: center;
+}
+.box1{
+    background-color:brown;
+    color: white;
+}
