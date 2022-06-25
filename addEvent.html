@@ -1,14 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
-        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <style>
+{% extends 'base.html' %}
+{% block title %}Add Event{% endblock title %}
+{% block addEventactivity %}active{% endblock addEventactivity %}
+{% block style %}
         .container {
             width: 80vw;
             display: flex;
@@ -18,51 +11,45 @@
         input {
             width: 60vw;
         }
-    </style>
-</head>
-
-<body>
+        
+{% endblock style %}
+{% block body %}
     <div class="container">
-        <form>
+        <form method="post" action="/addEvent/" enctype="multipart/form-data">
+            {% csrf_token %}
             <div class="form-group">
-                <label for="exampleInputEmail1">Tittle</label>
-                <input type="text" class="form-control" id="exampleInputEmail1" name="Tittle"
+                <label for="title">Title</label>
+                <input type="text" class="form-control" id="title" name="title"
                     aria-describedby="emailHelp" placeholder="Enter title">
             </div>
             <div class="form-group">
-                <label for="exampleInputPassword1">Author name</label>
-                <input type="text" class="form-control" id="exampleInputPassword1" name="Author name"
+                <label for="author">Author name</label>
+                <input type="text" class="form-control" id="author" name="author"
                     placeholder="Enter Author name">
             </div>
             <div class="form-group">
-                <label for="exampleInputPassword1">Start time</label>
-                <input type="time" class="form-control" id="exampleInputPassword1" name="Start time">
+                <label for="starttime">Start time</label>
+                <input type="datetime-local" class="form-control" id="starttime" name="start_time">
             </div>
             <div class="form-group">
-                <label for="exampleInputPassword1">End time</label>
-                <input type="time" class="form-control" id="exampleInputPassword1" name="End time">
+                <label for="endtime">End time</label>
+                <input type="datetime-local" class="form-control" id="endtime" name="end_time">
             </div>
             <div class="form-group">
-                <label for="exampleInputPassword1">Event description</label>
-                <textarea cols="30" rows="10" class="form-control" id="exampleInputPassword1" placeholder="description"
-                    name="Event description"></textarea>
+                <label for="description">Event description</label>
+                <input type="text" class="form-control" id="description" name="description"
+                    placeholder="Enter short description foryour event">
             </div>
             <div class="form-group">
-                <label for="exampleInputEmail1">Content</label>
-                <textarea cols="30" rows="10" class="form-control" id="exampleInputPassword1" placeholder="Content"
-                    name="Content"></textarea>
+                <h4>Edit your Event Details Here: </h4>
+                {{form.media}}{{form.content}}
             </div>
             <div class="form-group">
-                <label for="exampleInputPassword1">Add image</label>
-                <input type="file" class="form-control" id="exampleInputPassword1" name="Add image">
-            </div>
-            <div class="form-group form-check">
-                <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                <label for="image">Add image</label>
+                <input type="file" class="form-control" id="image" name="image">
             </div>
             <button type="submit" class="btn btn-primary">Submit</button>
         </form>
     </div>
-</body>
+{% endblock body %}
 
-</html>
