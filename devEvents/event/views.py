@@ -2,14 +2,14 @@ from django.shortcuts import render
 from django.http import HttpResponse
 
 
-def home(request):
-    return HttpResponse("this is home for events")
+def allEvents(request):
+    return render(request,"event/allEvents.html")
     
-def future_events(request):
-    return HttpResponse("this is home for future_events")
+def futureEvents(request):
+    return render(request,"event/futureEvents.html")
 
-def current_events(request):
-    return HttpResponse("this is home for current_events")
+def currentEvents(request):
+    return render(request,"event/currentEvents.html")
 
-def past_events(request):
-    return HttpResponse("this is home for past_events")
+def pastEvents(request):
+    return render(request,"event/pastEvents.html")

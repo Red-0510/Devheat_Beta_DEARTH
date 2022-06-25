@@ -2,14 +2,14 @@ from django.shortcuts import render
 from django.http import HttpResponse
 
 def home(request):
-    return HttpResponse("this is home")
+    return render(request,"home/home.html")
 
 def about(request):
-    return HttpResponse("this is about")
+    return render(request,"home/about.html")
 
 def search(request):
-    return HttpResponse("this is search")
+    return render(request,"home/search.html")
 
-def add_event(request):
-    return HttpResponse("this is add_event")
+def addEvent(request):
+    return render(request,"home/addEvent.html")
 
