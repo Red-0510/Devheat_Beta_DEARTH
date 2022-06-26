@@ -32,7 +32,7 @@ font-weight: lighter;
 }
 {% endblock style %}
 {% block body %}
-    <div class="container">
+    <div class="container my-2">
         <div class="main">
             <div class="box1">
                 <form method="post" action="/addEvent/" enctype="multipart/form-data">
@@ -64,6 +64,10 @@ font-weight: lighter;
                         <input type="text" class="form-control" id="description" name="description"
                             placeholder="Enter short description foryour event">
                     </div>
+                    <div class="form-group">
+                        <label for="image">Add image</label>
+                        <input type="file" class="form-control" id="image" name="image">
+                    </div>
             </div>
 
 
@@ -75,11 +79,7 @@ font-weight: lighter;
                 </div>
             </div>
         </div>
-        <div class="form-group">
-            <label for="image">Add image</label>
-            <input type="file" class="form-control" id="image" name="image">
-        </div>
-        <center> <button type="submit" class="btn btn-primary">Submit</button>
+        <center> <button type="submit" class="btn btn-primary my-2" >Submit</button>
             <center>
                 </form>
     </div>

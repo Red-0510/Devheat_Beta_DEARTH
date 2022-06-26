@@ -51,6 +51,6 @@ def pastEvents(request):
     return render(request,"event/pastEvents.html",params)
 
 def eventPage(request,slug):
-    post=Event.objects.filter(slug=slug).first()
-    params={'post':post}
+    event=Event.objects.filter(slug=slug).first()
+    params={'event':event}
     return render(request,"event/eventPage.html",params)

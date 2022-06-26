@@ -13,7 +13,15 @@ def about(request):
     return render(request,"home/about.html")
 
 def search(request):
-    return render(request,"home/search.html")
+    query=request.GET['query']
+    if len(query)>80:
+        events=[]
+    else:
+        events=Event.objects.filter(title__icontains=query)
+        events2=Event.objects.filter(description__icontains=query)
+        events=events.union(events2)
+        params={'events':events,'query':query}
+    return render(request,"home/search.html",params)
 
 def addEvent(request):
     if request.method=='POST':

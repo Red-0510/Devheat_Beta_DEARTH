@@ -1,16 +1,16 @@
 {% extends 'base.html' %}
-{% block title %}{{post.title}}{% endblock title %}
+{% block title %}{{event.title}}{% endblock title %}
 {% block eventactivity %}active{% endblock eventactivity %}
 {% load humanize %}
 {% block body %}
     <div class="container m-2 mx-auto" style="border:2px solid black;">
-        <h1 class="my-2" style="text-align: center;">{{post.title}}</h1>
-        <h6 class="my-1" style="color:blue;text-align:center"> written by {{post.author}} last updated {{event.pub_timestamp|naturaltime}}</h6>
-        <p class="my-1" ><b>Start Time: {{post.start_time}}</b></p>
-        <p class="my-1"><b>End Time: {{post.end_time}}</b></p>
-        <p class="my-1">{{post.description}}</p>
+        <h1 class="my-2" style="text-align: center;">{{event.title}}</h1>
+        <h6 class="my-1" style="color:blue;text-align:center"> written by {{event.author}} last updated {{event.pub_timestamp|naturaltime}}</h6>
+        <p class="my-1" ><b>Start Time: {{event.start_time}}</b></p>
+        <p class="my-1"><b>End Time: {{event.end_time}}</b></p>
+        <p class="my-1">{{event.description}}</p>
         <div class="container my-1">
-            {{post.content|safe}}
+            {{event.content|safe}}
         </div>
     </div>
 {% endblock body %}

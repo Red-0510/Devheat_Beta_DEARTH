@@ -2,40 +2,57 @@
 {% block title %}All Events{% endblock title %}
 {% block eventactivity %}active{% endblock eventactivity %}
 {% block style %}
-    span{
-        color:blue;
-        font-size:25px;
-    }
-
 {% endblock style %}
 {% block body %}
-<div class="container m-2">
-    <h1 class="m-2">Ongoing Events</h1>
-    <div class="container m-1">
+<div class="container mx-2">
+    <hr>
+    <h1 class="my-0">Ongoing Events</h1>
+    <hr>
+    <div class="accordion accordion-flush" id="accordionFlushExample">
         {% for event in current_events %}
-            <div class="container badge bg-secondary my-1">
-                <h1 class="m-1"><a href="/event/{{event.slug}}">{{event.title}}</a><span>  by {{event.author}}</span></h1>
-                <p class="m-1">{{event.description}}</p>
+            <div class="accordion-item" style="padding:0px;">
+                <h2 class="accordion-header" id="flush-heading{{forloop.counter}}">
+                <button class="accordion-button collapsed my-0" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse{{forloop.counter}}" aria-expanded="false" aria-controls="flush-collapse{{forloop.counter}}">
+                    <a href="/event/{{event.slug}}" style="text-decoration:none;color:black"><span style="font-size:20px;">{{event.title}}</span><span style="font-size:13px;font-weight:bold;color:blue;" >&nbsp; by {{event.author}}</span></a>
+                </button>
+                </h2>
+                <div id="flush-collapse{{forloop.counter}}" class="accordion-collapse collapse my-0" aria-labelledby="flush-heading{{forloop.counter}}" data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body my-0" style="font-style:italic">{{event.description}}</div>
+                </div>
             </div>
         {% endfor %}
     </div>
     <hr>
-    <h1 class="m-2">Future Events</h1>
-    <div class="container m-1">
+    <h1 class="m-0">Future Events</h1>
+    <hr>
+    <div class="accordion accordion-flush" id="accordionFlushExample">
         {% for event in future_events %}
-            <div class="container badge bg-secondary my-1">
-                <h1 class="m-1"><a href="/event/{{event.slug}}">{{event.title}}</a><span>  by {{event.author}}</span></h1>
-                <p class="m-1">{{event.description}}</p>
+            <div class="accordion-item" style="padding:10px,0px;">
+                <h2 class="accordion-header" id="flush-heading{{forloop.counter}}">
+                <button class="accordion-button collapsed my-0" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse{{forloop.counter}}" aria-expanded="false" aria-controls="flush-collapse{{forloop.counter}}">
+                    <a href="/event/{{event.slug}}" style="text-decoration:none;color:black"><span style="font-size:20px;">{{event.title}}</span><span style="font-size:13px;font-weight:bold;color:blue;" >&nbsp; by {{event.author}}</span></a>
+                </button>
+                </h2>
+                <div id="flush-collapse{{forloop.counter}}" class="accordion-collapse collapse my-0" aria-labelledby="flush-heading{{forloop.counter}}" data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body my-0" style="font-style:italic">{{event.description}}</div>
+                </div>
             </div>
         {% endfor %}
     </div>
     <hr>
-    <h1 class="m-2">Past Events</h1>
-    <div class="container m-1">
+    <h1 class="m-0">Past Events</h1>
+    <hr>
+    <div class="accordion accordion-flush" id="accordionFlushExample">
         {% for event in past_events %}
-            <div class="container badge bg-secondary my-1">
-                <h1 class="m-1"><a href="/event/{{event.slug}}">{{event.title}}</a><span>  by {{event.author}}</span></h1>
-                <p class="m-1">{{event.description}}</p>
+            <div class="accordion-item" style="padding:10px,0px;">
+                <h2 class="accordion-header" id="flush-heading{{forloop.counter}}">
+                <button class="accordion-button collapsed my-0" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse{{forloop.counter}}" aria-expanded="false" aria-controls="flush-collapse{{forloop.counter}}">
+                    <a href="/event/{{event.slug}}" style="text-decoration:none;color:black"><span style="font-size:20px;">{{event.title}}</span><span style="font-size:13px;font-weight:bold;color:blue;" >&nbsp; by {{event.author}}</span></a>
+                </button>
+                </h2>
+                <div id="flush-collapse{{forloop.counter}}" class="accordion-collapse collapse my-0" aria-labelledby="flush-heading{{forloop.counter}}" data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body my-0" style="font-style:italic">{{event.description}}</div>
+                </div>
             </div>
         {% endfor %}
     </div>

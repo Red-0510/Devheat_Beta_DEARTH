@@ -8,18 +8,18 @@
         <div class="carousel-inner">
             {% for event in events %}
                 <div class="carousel-item {% if forloop.first %}active{% endif %} mx-3" style="height:70vh">
-                    <a href="/event/{{event.slug}}" class="my-0" style="text-decoration:none"><h2 style="color:black">{{event.title}}</h2></a><span style="color:blue"> by {{event.author}}</span>
-                    <p class="my-0" style="font-size:20px">{{event.description}}</p>
+                    <a href="/event/{{event.slug}}" class="my-0" style="text-decoration:none"><h2 style="color:black;font-size:20px">{{event.title}}</h2></a><span style="color:blue;font-weight:bold;font-size:15px"> by {{event.author}}</span>
+                    <p class="my-0" style="font-size:20px;font-style:italic">{{event.description}}</p>
                     <img src="/media/{{event.image}}" width="95%" height="95%" style="border:2px solid black">
                 </div>
             {% endfor %}
         </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true" ></span>
+            <span class="carousel-control-prev-icon bg-dark" aria-hidden="true" ></span>
             <span class="visually-hidden">Previous</span>
         </button>
         <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="carousel-control-next-icon bg-dark" aria-hidden="true"></span>
             <span class="visually-hidden">Next</span>
         </button>
     </div>

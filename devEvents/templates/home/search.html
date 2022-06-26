@@ -1,6 +1,27 @@
 {% extends 'base.html' %}
 {% block title %}DevEvents{% endblock title %}
 {% block body %}
-<h1>Search Results: </h1>
+<div class="container m-2">
+    <h1 class="m-2">Search Results for: {{query}}</h1>
+    <div class="accordion accordion-flush" id="accordionFlushExample">
+        {% if events|length < 1 %}
+            <p> No searches results Found.</p>
+            Your Search Query: <b>{{query}}</b> did not match any documents<br>
+            try using different keywords.
+        {% endif %}
+        {% for event in events %}
+            <div class="accordion-item" style="padding:10px,0px;">
+                <h2 class="accordion-header" id="flush-heading{{forloop.counter}}">
+                <button class="accordion-button collapsed my-0" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse{{forloop.counter}}" aria-expanded="false" aria-controls="flush-collapse{{forloop.counter}}">
+                    <a href="/event/{{event.slug}}" style="text-decoration:none;color:black"><span style="font-size:20px;">{{event.title}}</span><span style="font-size:13px;font-weight:bold;color:blue;" >&nbsp; by {{event.author}}</span></a>
+                </button>
+                </h2>
+                <div id="flush-collapse{{forloop.counter}}" class="accordion-collapse collapse my-0" aria-labelledby="flush-heading{{forloop.counter}}" data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body my-0" style="font-style:italic">{{event.description}}</div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</div>
 {% endblock body %}
 
