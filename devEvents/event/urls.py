@@ -7,4 +7,5 @@ urlpatterns = [
     path('futureEvents/',views.futureEvents,name="futureEvents"),
     path('currentEvents/',views.currentEvents,name="currentEvents"),
     path('pastEvents/',views.pastEvents,name="pastEvents"),
+    path('<str:slug>',views.eventPage,name="eventPage"),
 ]

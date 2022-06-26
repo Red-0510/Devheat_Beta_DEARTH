@@ -5,6 +5,23 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> {% block title %}{% endblock title %}</title>
+    <style>{% block style %}{% endblock style %}</style>
+    <style>
+      *{
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+      }
+      nav-link{
+        font-size:20px;
+      }
+      h1,h2{
+        font-size:20px;
+        font-weight:bold;
+      }
+      a h1,h2{
+        text-decoration:none;
+        color:black;
+      }
+    </style>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
 </head>
 <body>

@@ -2,6 +2,16 @@
 {% block title %}Future Events{% endblock title %}
 {% block eventactivity %}active{% endblock eventactivity %}
 {% block body %}
-<h1>Upcoming future events</h1>
+<div class="container m-2">
+    <h1 class="m-2">Future Events</h1>
+    <div class="container m-1">
+        {% for event in future_events %}
+            <div class="container badge bg-secondary my-1">
+                <h1 class="m-1"><a href="/event/{{event.slug}}">{{event.title}}</a><span>  by {{event.author}}</span></h1>
+                <p class="m-1">{{event.description}}</p>
+            </div>
+        {% endfor %}
+    </div>
+</div>
 {% endblock body %}
 

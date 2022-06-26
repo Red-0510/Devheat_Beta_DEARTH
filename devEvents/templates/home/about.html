@@ -1,7 +1,55 @@
 {% extends 'base.html' %}
 {% block title %}About Developers{% endblock title %}
 {% block aboutactivity %}active{% endblock aboutactivity %}
+{% block style %}
+    .container{
+        display:flex;
+        margin: auto;
+    }
+    h1{
+        text-align: center;
+        font-weight: bold;
+        color: rgb(35, 4, 161);
+    }
+    hr{
+        border: 2px solid #06012a;
+    }
+{% endblock style %}
 {% block body %}
-<h1>Developers of this site</h1>
+<hr>
+    <h1>About Us</h1><hr>
+    <div class="container">
+    <div class="card" style="width: 33vw;">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRFbWN6Mo7az66M7iRQYwsAuTKhEfHFInhxpdcSjk2iByMBm2gyVbJ-p19L1WfDbaxBKIQ&usqp=CAU"
+ class="card-img-top" alt="...">
+        <div class="card-body">
+            <h5 class="card-title">Machhi Jainesh</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+                content.</p>
+            <a href="#" class="btn btn-primary">Github Profile</a>
+        </div>
+    </div>
+    <div class="card" style="width: 33vw;margin: 0 3rem">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRFbWN6Mo7az66M7iRQYwsAuTKhEfHFInhxpdcSjk2iByMBm2gyVbJ-p19L1WfDbaxBKIQ&usqp=CAU"
+            class="card-img-top" alt="...">
+        <div class="card-body">
+            <h5 class="card-title">Parth Sharma</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+                content.</p>
+            <a href="#" class="btn btn-primary">Github Profile</a>
+        </div>
+    </div>
+    <div class="card" style="width: 33vw;">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRFbWN6Mo7az66M7iRQYwsAuTKhEfHFInhxpdcSjk2iByMBm2gyVbJ-p19L1WfDbaxBKIQ&usqp=CAU"
+            class="card-img-top" alt="...">
+        <div class="card-body">
+            <h5 class="card-title">Nitin Meena</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+                content.</p>
+            <a href="#" class="btn btn-primary">Github Profile</a>
+        </div>
+    </div>
+    </div>
+    <hr>
 {% endblock body %}
 
